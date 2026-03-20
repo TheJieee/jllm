@@ -56,12 +56,8 @@ requests = [
 for req in requests:
     async_engine.push(req)
 
-# 获取结果
-while async_engine.has_output():
-    request_id, tokens = async_engine.get_one()
-    print(f"Request {request_id}: {tokens}")
 
-# 或一次获取所有结果
+# 或获取结果
 results = async_engine.get_all()
 for request_id, tokens in results:
     print(f"Request {request_id}: {tokens}")
@@ -117,7 +113,6 @@ request = Request(prompt=[1, 2, 3], request_id=42)
 - `set_up() -> None` - 初始化引擎（必须先调用）
 - `push(request: Request) -> int` - 推送请求到队列，返回request_id
 - `has_output() -> bool` - 检查是否有可用的结果
-- `get_one() -> Optional[Tuple[int, List[int]]]` - 获取一个结果
 - `get_all() -> List[Tuple[int, List[int]]]` - 获取所有可用结果
 - `pending_count() -> int` - 获取待处理请求数
 
@@ -182,4 +177,4 @@ sys.path.insert(0, '/path/to/python')
 
 ## 许可证
 
-参见项目根目录的LICENSE文件。
+采用MIT协议。
