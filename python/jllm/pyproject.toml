@@ -1,0 +1,8 @@
+[project]
+name = "jllm"
+version = "0.1.0"
+dependencies = [
+    "transformers>=4.30.0",
+    "pybind11>=2.10.0",
+    "torch"
+]
