@@ -44,6 +44,7 @@ public:
     std::string info() const;
     void debug(const std::string& message) const;
     void debug() const;
+    void debug(size_t row) const;
 
     bool isContiguous() const;
 

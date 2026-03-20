@@ -166,7 +166,7 @@ void jllm::ops::cpu::decode(
         );
         break;
     case jllmDataType_t::BF16:
-        decode_optimized<bf16_t>(
+        decode_<bf16_t>(
             reinterpret_cast<bf16_t*>(out), reinterpret_cast<bf16_t*>(q),
             reinterpret_cast<bf16_t*>(kcache), reinterpret_cast<bf16_t*>(vcache),
             nhead, nkvhead, head_dim, seq_len, block_table, block_size

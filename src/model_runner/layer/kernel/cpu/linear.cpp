@@ -184,7 +184,7 @@ void linear(
             out_features
         );
     case jllmDataType_t::BF16:
-        return linear_(
+        return linear_optimized_bf16(
             reinterpret_cast<jllm::bf16_t*>(out),
             reinterpret_cast<const jllm::bf16_t*>(in),
             reinterpret_cast<const jllm::bf16_t*>(weight),

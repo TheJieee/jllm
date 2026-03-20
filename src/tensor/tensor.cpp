@@ -160,7 +160,17 @@ void Tensor::debug(const std::string& message) const {
 void Tensor::debug() const
 {
     std::cout << this->info() << std::endl;
-    debug_print(this->data(), {this->shape().back()}, {1}, this->dtype());
+    debug_print(this->data(), this->shape(), this->strides(), this->dtype());
+}
+
+void Tensor::debug(size_t row) const
+{
+    debug_print(
+        this->data(),
+         { row, shape().back(), }, 
+         {*(this->strides().end() - 2), this->strides().back(), }, 
+         dtype()
+        );
 }
 
 bool Tensor::isContiguous() const {

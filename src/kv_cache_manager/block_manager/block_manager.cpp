@@ -7,7 +7,7 @@ BlockManager::BlockManager(size_t num_blocks, size_t block_size) : m_block_size(
     m_ref_counts.assign(num_blocks, 0);
     m_num_0ref = num_blocks;
     for(size_t i = 0; i < num_blocks; i++) {
-        m_free_blocks[i] = i;
+        m_free_blocks[i] = num_blocks - i - 1;//从前往后分配，方便调试。
     }
 }
 

@@ -54,7 +54,8 @@ void Executor::send(std::vector<Sequence*>& seqs)
         if(seqs[i]->prefill_finished()){//decode
             cusl[i + 1] = cusl[i] + 1;
             cl[i] = seqs[i]->num_computed_tokens();
-            size_t base = bts[i]->back() * block_size;
+            size_t order = cl[i];
+            size_t base = bts[i]->at(order / block_size) * block_size;
             size_t offset = seqs[i]->num_computed_tokens() % block_size;
             sm.push_back(base + offset);
             p[seq_len] = seqs[i]->get_last_token();
@@ -93,8 +94,6 @@ void Executor::send(std::vector<Sequence*>& seqs)
     auto pout = reinterpret_cast<int64_t*>(m_output->data());
     for(size_t i = 0; i < seqs.size(); i++) {
         int64_t token = pout[cusl[i + 1] - 1];
-
-        spdlog::info("token: {}\n", token);
 
         if(seqs[i]->prefill_finished())
             seqs[i]->add_token(token);

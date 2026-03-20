@@ -249,7 +249,7 @@ void Qwen2::forward(tensor_t out_logits, tensor_t input, const InputMeta &meta)
 
         //attention
         ops::linear(v_, x_norm, m_weights.attn_v_w[i], m_weights.attn_v_b[i]);
-        ops::linear(k_, x_norm, m_weights.attn_k_w[i]);
+        ops::linear(k_, x_norm, m_weights.attn_k_w[i], m_weights.attn_k_b[i]);
         ops::linear(q_, x_norm, m_weights.attn_q_w[i], m_weights.attn_q_b[i]);
 
         ops::rope(q_rope, q_, pos_ids, m_rope_table);

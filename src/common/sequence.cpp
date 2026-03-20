@@ -52,6 +52,7 @@ void Sequence::add_chunk(size_t chunk_size, int64_t token_id)
     m_num_computed_tokens += chunk_size;
     if(m_num_computed_tokens >= m_prompt.size()){
         add_token(token_id);
+        m_num_computed_tokens--;
     }
 }
 
