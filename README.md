@@ -49,7 +49,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/TheJiee/jllm.git
+git clone https://github.com/TheJieee/jllm.git
 cd jllm
 
 # 编译（使用全部核心）
