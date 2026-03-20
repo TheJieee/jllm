@@ -3,7 +3,7 @@
 >  CPU 大模型推理引擎
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![C++](https://img.shields.io/badge/C%2B%2B-17-orange.svg)](https://isocpp.org/)
+[![C++](https://img.shields.io/badge/C%2B%2B-20-orange.svg)](https://isocpp.org/)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/)
 [![AVX2](https://img.shields.io/badge/SIMD-AVX2-red.svg)](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html)
 
