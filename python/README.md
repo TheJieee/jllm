@@ -1,6 +1,6 @@
 # JLLM Python Wrapper
 
-Python友好的JLLM (Jintian's Large Language Model) 推理引擎封装层。
+Python友好的JLLM (Jie's Large Language Model) 推理引擎封装层。
 
 ## 特性
 
@@ -63,17 +63,6 @@ for request_id, tokens in results:
     print(f"Request {request_id}: {tokens}")
 ```
 
-### 配置引擎
-
-```python
-from jllm import Config
-
-config = Config(
-    cache_num_block=256,     # 缓存块数量
-    cache_block_size=2048    # 每块大小
-)
-```
-
 ## API 文档
 
 ### 类: Request
@@ -129,28 +118,6 @@ python/
 └── talk.py                  # 使用示例
 ```
 
-## 开发
-
-### 从源码安装（开发模式）
-
-```bash
-cd /home/jie/learning/ai_camp_2026/jllm
-pip install -e .
-```
-
-### 运行示例
-
-```bash
-cd python
-python talk.py
-```
-
-### 运行测试
-
-```bash
-python -m pytest tests/  # 如果有测试文件
-```
-
 ## 故障排除
 
 ### "Failed to import _jllm_engine.so"
@@ -170,11 +137,3 @@ xmake
 import sys
 sys.path.insert(0, '/path/to/python')
 ```
-
-## 贡献
-
-欢迎提交问题和拉取请求！
-
-## 许可证
-
-采用MIT协议。
