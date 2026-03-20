@@ -31,7 +31,7 @@
 
 | 特性 | 描述 |
 |------|------|
-| **算子融合（Kernel Fusion）** | 将 LayerNorm、激活函数、矩阵乘等相邻算子在编译期/运行期合并为单一 Kernel，减少中间内存读写与函数调用开销 |
+| **算子融合（Kernel Fusion）** | 实现了add_norm, gate_up_swiglu, fused_attention，减少中间内存读写与函数调用开销 |
 | **AVX2 SIMD 向量化** | 核心计算路径（GEMM、点积、Softmax 等）使用 AVX2 指令集向量化，单核吞吐相比标量实现提升显著 |
 | **多线程并行** | 基于openMP实现算子内，充分利用多核 CPU 算力 |
 
@@ -40,7 +40,7 @@
 通过 pybind11 提供两套使用模式：
 
 - **`Engine`** — 同步接口，适用于单次推理、调试与低延迟场景
-- **`AsyncEngine`** — 异步接口，基于协程驱动的连续批处理（Continuous Batching），适用于高并发在线服务
+- **`AsyncEngine`** — 异步接口的连续批处理（Continuous Batching），适用于高并发在线服务
 
 ---
 
