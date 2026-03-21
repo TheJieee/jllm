@@ -1,0 +1,8 @@
+{
+    "kv_cache": {
+        "num_blocks": 0,
+        "block_size": 8
+    },
+    "model_path": "/home/jie/learning/ai_camp_2026/DeepSeek-R1-Distill-Qwen-1.5B",
+    "model_type": "Qwen2"
+}

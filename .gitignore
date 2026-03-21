@@ -25,9 +25,6 @@ __pycache__/
 # Cache
 cache/
 
-# JSON
-*.json
-
 #GGUF
 *.gguf
 
