@@ -22,9 +22,8 @@ Engine::Engine()
     json config = json::parse(file);
 
     m_config.cache_num_block = config["kv_cache"]["num_blocks"];
-    spdlog::info("cache block number: {}\n", m_config.cache_num_block);
     m_config.cache_block_size = config["kv_cache"]["block_size"];
-    spdlog::info("chche block size: {}\n", m_config.cache_block_size);
+    spdlog::info("cache block size: {}\n", m_config.cache_block_size);
     m_model_path = config["model_path"];
     spdlog::info("model path: {}\n", m_model_path);
 
